@@ -1,1 +1,191 @@
+:root {
+  --hue: 204;
+  --saturation: 100%;
+  --lightness: 30%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-accent {
+  --hue: 120;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url('https://images.unsplash.com/photo-1626723370213-254566b2dbbd?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyOTMxNTk0NA&ixlib=rb-1.2.1&q=85');
+  background-size: cover;
+}
+
+.card {
+  background: hsl(var(--hue) var(--saturation) var(--lightness) / .95);
+  
+  display: grid;
+  grid-column-gap: 2em;
+  grid-template-areas:
+    "name"
+    "image"
+    "social"
+    "position"
+    "description";
+  grid-template-columns: 1fr;
+
+  position: relative;
+
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em;
+
+  text-align: center;
+  color: white;
+
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card::after {
+  content: "";
+  /* display stuff */
+
+  /* positioning stuff */
+  position: absolute;
+  left: -15rem;
+  right: -15rem;
+  bottom: -7rem;
+  z-index: -1;
+
+  /* box-model stuff */
+  height: 30%;
+  background: inherit;
+
+  /* typography */
+
+  /* manipulation */
+  transform: perspective(10rem) rotateX(60deg) translateY(-5rem);
+  filter: blur(3rem);
+  opacity: 0.5;
+
+  /* misc */
+}
+
+.profile-name {
+  grid-area: name;
+}
+.profile-position {
+  grid-area: position;
+}
+.profile-info {
+  grid-area: description;
+}
+.profile-img {
+  grid-area: image;
+}
+.social-list {
+  grid-area: social;
+}
+
+.profile-info {
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.profile-name {
+  grid-area: name;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin: 0.75em 0 0;
+  line-height: 1;
+}
+
+.profile-name::after {
+  content: "";
+  display: block;
+  width: 2em;
+  height: 1px;
+  background: #5bcbf0;
+  margin: 0.5em auto 0.65em;
+  opacity: 0.25;
+}
+
+.profile-position {
+  --lightness: 80%;
+  --saturation: 70%;
+  color: hsl(var(--hue) var(--saturation) var(--lightness) / .95);
+
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 3px;
+  margin: 0 0 0.5vem;
+  line-height: 1;
+}
+
+.profile-img {
+  justify-self: center;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 2px solid white;
+  min-width: 7rem;
+}
+
+.social-list {
+  justify-self: center;
+  list-style: none;
+  justify-content: space-between;
+  display: flex;
+  width: 75px;
+  margin: 0.5em 0 0;
+  padding: 0;
+}
+
+.social-link {
+  color: #5bcbf0;
+  opacity: 0.5;
+}
+
+.social-link:hover,
+.social-link:focus {
+  opacity: 1;
+}
+
+.bio-title {
+  color: #0090d1;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .card {
+    text-align: left;
+    grid-template-columns: fit-content 1fr;
+    grid-template-areas:
+      "image name"
+      "position description"
+      "social description";
+  }
+
+  .profile-name {
+    align-self: center;
+  }
+
+  .profile-position {
+    text-align: center;
+  }
+
+  .profile-info {
+    margin: 0;
+  }
+
+  .profile-name::after {
+    margin-left: 0;
+  }
+}
 
