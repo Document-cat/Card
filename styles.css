@@ -1,11 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --hue: 204;
   --saturation: 100%;
   --lightness: 30%;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .bg-accent {
@@ -16,7 +16,7 @@ body {
   font-family: "Fira Sans", sans-serif;
   line-height: 1.6;
   min-height: 100vh;
-  display: grid;
+  /* display: grid; */
   place-items: center;
   background-image: url('https://images.unsplash.com/photo-1626723370213-254566b2dbbd?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyOTMxNTk0NA&ixlib=rb-1.2.1&q=85');
   background-size: cover;
@@ -25,7 +25,7 @@ body {
 .card {
   background: hsl(var(--hue) var(--saturation) var(--lightness) / .95);
 
-  display: grid;
+  /* display: grid; */
   grid-column-gap: 2em;
   grid-template-areas:
     "name"
@@ -165,11 +165,12 @@ body {
 @media (min-width: 600px) {
   .card {
     text-align: left;
-    grid-template-columns: fit-content 1fr;
+    grid-template-columns: it-content 1fr;
     grid-template-areas:
       "image name"
       "position description"
       "social description";
+      margin: 10px;
   }
 
   .profile-name {
@@ -190,13 +191,12 @@ body {
 }
 
 header {
-  padding-top: 10px;
+  width: 100%;
+  /* padding-top: 10px; */
   text-align: center;
   background: gray;
+  margin: 0;
 }
-
-<style>
-body {margin: 0;}
 
 ul.topnav {
   list-style-type: none;
