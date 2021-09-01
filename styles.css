@@ -15,11 +15,11 @@
 body {
   font-family: "Fira Sans", sans-serif;
   line-height: 1.6;
-  min-height: 100vh;
-  /* display: grid; */
+  display: grid;
   place-items: center;
   background-image: url('https://images.unsplash.com/photo-1626723370213-254566b2dbbd?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyOTMxNTk0NA&ixlib=rb-1.2.1&q=85');
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .card {
@@ -235,3 +235,7 @@ ul.topnav li.right {float: right;}
   text-decoration: none;
   color: white;
 } */
+
+.line-1 {
+  display: flex;
+}
