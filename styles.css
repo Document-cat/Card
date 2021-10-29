@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -13,17 +15,47 @@ header {
   margin-bottom: 2.5%;
   background-color: blue;
   text-align: center;
+  font-family: 'Major Mono Display', monospace;
 }
-
+/* grid columns one */
 .cards {
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
   grid-gap: 5%;
   justify-content: center;
 }
+/* card */
+.proflile {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+}
+
+.cards a {
+  text-decoration: none;
+  color: black;
+}
+
+.card h4 {
+  margin: .2em;
+}
+
+.card p {
+  margin: .2em;
+  font-size: .8em;
+}
 
 .card {
-  background-color: red;
-  width: 20vw;
-  height: 35vh;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 5px;
+  font-family: 'Major Mono Display', monospace;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.main {
+  padding: 2px 16px;
 }
