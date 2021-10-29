@@ -13,7 +13,7 @@ header {
   padding-left: 2.5vw;
   padding-right: 2.5vw;
   margin-bottom: 2.5%;
-  background-color: blue;
+  background-color: rgba(54, 155, 221, 0.5);
   text-align: center;
   font-family: 'Major Mono Display', monospace;
 }
@@ -21,7 +21,8 @@ header {
 .cards {
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
-  grid-gap: 5%;
+  grid-column-gap: 5%;
+  grid-row-gap: 2%;
   justify-content: center;
 }
 /* card */
@@ -58,4 +59,48 @@ header {
 
 .main {
   padding: 2px 16px;
+}
+
+/* slide in page */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(27, 71, 11, 0.78);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+  font-family: 'Major Mono Display', monospace;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav p {
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
